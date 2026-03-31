@@ -1,0 +1,79 @@
+.Landing-Container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.Landing-Hero {
+    padding: 60px;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.Hero-Title {
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.Hero-Title .highlight {
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Hero-Subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    color: var(--text-secondary);
+}
+
+.Hero-Button {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    padding: 20px 48px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 10px 40px rgba(167, 76, 242, 0.4);
+    margin-top: 20px;
+}
+
+.Landing-Decoration {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+}
+
+.decoration-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-primary);
+    top: -100px;
+    left: -100px;
+    opacity: 0.1;
+}
+
+.decoration-2 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-secondary);
+    bottom: -150px;
+    right: -150px;
+    opacity: 0.15;
+}
+
+@media (max-width: 768px) {
+    .Hero-Title {
+        font-size: 3rem;
+    }
+    .Landing-Hero {
+        padding: 40px 20px;
+        margin: 20px;
+    }
+}

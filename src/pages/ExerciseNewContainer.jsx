@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import '../components/styles/ExerciseNew.css'
+import { useNavigate } from 'react-router-dom'
 import Loading from '../components/Loading'
 import FatalError from './500'
 import ExerciseNew from './ExerciseNew'
 import url from '../config'
 
-const ExerciseNewContainer = ({ history }) => {
+const ExerciseNewContainer = () => {
+    const navigate = useNavigate()
     const [form, setForm] = useState({
+        id: Math.random().toString(36).substr(2, 9),
         title: '',
         description: '',
         img: '',
@@ -27,20 +29,23 @@ const ExerciseNewContainer = ({ history }) => {
         setLoading(true)
         e.preventDefault()
         try {
-            let config = {
+            await fetch(`${url}/exercises`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(form)
-            }
-            await fetch(`${url}/exercises`, config)
+            })
             setLoading(false)
-            history.push('/exercise')
+            navigate('/exercise')
         } catch (error) {
+            console.error("Save failed locally:", error);
+            // Persistence for mock: save to localStorage
+            const localData = JSON.parse(localStorage.getItem('fitness_exercises') || '[]');
+            localStorage.setItem('fitness_exercises', JSON.stringify([...localData, form]));
             setLoading(false)
-            setError(error)
+            navigate('/exercise')
         }
     }
 
@@ -51,12 +56,12 @@ const ExerciseNewContainer = ({ history }) => {
         return <FatalError />
 
     return (
-        <div className="container"><ExerciseNew
-            form={form}
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-            editing={true}
-        />
+        <div className="container">
+            <ExerciseNew
+                form={form}
+                onChange={handleChange}
+                onSubmit={handleSubmit}
+            />
         </div>
     )
 }

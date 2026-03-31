@@ -1,8 +1,32 @@
-.Fitness-Add {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    margin-bottom: 80px;
+.Add-Button-Wrapper {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 100;
+}
+
+.Add-Button-Floating {
+    width: 60px;
     height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(97, 123, 251, 0.4);
+    border: none;
+    cursor: pointer;
+}
+
+.Add-Button-Floating:hover {
+    box-shadow: 0 15px 35px rgba(97, 123, 251, 0.6);
+}
+
+@media (max-width: 768px) {
+    .Add-Button-Wrapper {
+        bottom: 20px;
+        right: 20px;
+    }
 }

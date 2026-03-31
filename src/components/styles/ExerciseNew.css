@@ -1,10 +1,28 @@
-.ExerciseNew_Lateral_Spaces{
-    margin-right: 100px;
-    margin-left: 100px;
+.ExerciseNew-Layout {
+    padding: 60px 0;
 }
-.ExerciseNew_Card_Space{
-    margin-top: 180px;
+
+.Section-Title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-.ExerciseNew_Form_Space{
-    margin-top: 140px;
+
+.ExerciseNew-Preview-Form {
+    align-items: flex-start;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+@media (max-width: 992px) {
+    .ExerciseNew-Preview-Form {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
 }

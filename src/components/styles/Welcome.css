@@ -1,5 +1,32 @@
-.Fitness-User-Info {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 200px;
+.Welcome-Container {
+    padding: 60px 0 20px;
+}
+
+.Welcome-Info {
+    text-align: left;
+}
+
+.Welcome-Title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.Welcome-Title .highlight {
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Welcome-Subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+}
+
+@media (max-width: 768px) {
+    .Welcome-Title {
+        font-size: 2.5rem;
+    }
 }

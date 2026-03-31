@@ -1,0 +1,68 @@
+.ExerciseForm-Card {
+    padding: 32px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.Input-Group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.Input-Group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.Input-Group input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.Input-Group input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 4px rgba(97, 123, 251, 0.2);
+}
+
+.color-picker {
+    height: 50px;
+    padding: 5px !important;
+    cursor: pointer;
+}
+
+.Submit-Button {
+    margin-top: 16px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(167, 76, 242, 0.3);
+}
+
+.Submit-Button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(167, 76, 242, 0.4);
+}
+
+.Submit-Button:active {
+    transform: translateY(0);
+}
+
+.flex-1 {
+    flex: 1;
+}
